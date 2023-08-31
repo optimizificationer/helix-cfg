@@ -1,0 +1,53 @@
+theme = "dracula"
+
+[editor]
+mouse = false
+line-number = "relative"
+true-color = true
+rulers = [80]
+auto-pairs = false
+color-modes = true
+bufferline = "always"
+
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+
+[editor.cursor-shape]
+insert = "block"
+normal = "block"
+select = "block"
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
+[keys.normal]
+a = ["append_mode", "collapse_selection"]
+i = ["insert_mode", "collapse_selection"]
+x = "extend_line"
+C-q = ":bclose"
+
+[keys.select]
+";" = ["collapse_selection", "normal_mode"]
+
+# Same behaviour as normal mode x
+x = "extend_line"
+
+# Counterpart for normal mode V
+V = "extend_to_line_end"
